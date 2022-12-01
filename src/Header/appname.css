@@ -1,0 +1,9 @@
+.appicon{
+    height: 36px;
+    width: 36px;
+    margin: 15px;
+}
+.namebar{
+    display: flex;
+    align-items: center;
+}
