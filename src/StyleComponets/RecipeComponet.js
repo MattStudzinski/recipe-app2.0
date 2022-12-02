@@ -25,10 +25,26 @@ font-weight: bold;
 color: black;
 margin: 10px 0;
 `
-export const RecipeIngredients = styled.span`
+export const TimeToCook = styled.span`
+display: flex;
+margin-bottom: 12px;
+font-size: 15px;
+font-weight: 600;
+`
+
+export const MealType = styled.div`
+margin-left: 12px;
+`
+export const CuisineType = styled.div`
+font-size: 15px;
+font-weight: 600;
+margin-bottom: 12px;
+display: flex;
+flex-direction: row;
+`
+export const RecipeIngredients = styled.button`
 font-size: 18px;
 border: solid 1px green;
-color: black;
 cursor: pointer;
 padding: 10px 15px;
 border-radius: 4px;
@@ -46,3 +62,6 @@ border-radius: 4px;
 color: red;
 text-align: center;
 `
+
+
+
