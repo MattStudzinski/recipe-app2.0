@@ -10,6 +10,36 @@ const APP_ID ='bb0a04fb'
 const APP_KEY = process.env.REACT_APP_API_KEY
 
 
+
+
+
+
+
+
+
+
+
+
+const DetailsContainer = styled.div`
+
+`
+
+const RecipeDetailsName = styled.p`
+
+`
+
+const RecipeDetailsCalories = styled.p`
+
+`
+
+const IngredientsContainer = styled.ul`
+
+`
+
+const Ingredients = styled.li`
+
+`
+
 const RecipeCards = (props) => {
     console.log('props', props)
     const {recipeObj} =props
@@ -23,17 +53,20 @@ const RecipeCards = (props) => {
             <CuisineType>Cuisine: {recipeObj.cuisineType} <MealType>{recipeObj.mealType}</MealType></CuisineType>
             <TimeToCook>Cook-time: {recipeObj.totalTime} minutes</TimeToCook>
             <RecipeIngredients onClick={() => setShow(!show)}>ingredients</RecipeIngredients>
-            {show && <div><p className='calo'>{recipeObj.label} </p>
+            
+            
+            
+            {show && <DetailsContainer><RecipeDetailsName>{recipeObj.label} </RecipeDetailsName>
              
-             <p className='type'>{stringCal.length > 5 ? stringCal.slice(0,6) + '' : stringCal}</p>
+             <RecipeDetailsCalories>{stringCal.length > 5 ? stringCal.slice(0,6) + '' : stringCal}</RecipeDetailsCalories>
              
              
-             <ul>
+             <IngredientsContainer>
                 {recipeObj.ingredients.map((ingredient,index) => (
-                    <li key={index}>{ingredient.text}</li>
+                    <Ingredients key={index}>{ingredient.text}</Ingredients>
                 ))}
-             </ul>
-             </div>}
+             </IngredientsContainer>
+             </DetailsContainer>}
             <LinktoRecipe onClick={() => window.open(recipeObj.url)}>See complete recipe</LinktoRecipe>
         </RecipeCard>
     );
