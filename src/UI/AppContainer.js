@@ -6,7 +6,6 @@ import { ListContainer,RecipeCard,RecipeImage,RecipeName, InfoList,InfoLiItem,In
 
 
 const APP_ID ='bb0a04fb'
-const APP_KEY = process.env.REACT_APP_API_KEY
 
 
 const RecipeCards = (props) => {
@@ -79,7 +78,7 @@ const AppContainer = () => {
     const [recipeList, updateRecipeList] = useState([])
 
     const fetchRecipe = async(searchString) =>{
-        const response = await Axios.get(`https://api.edamam.com/search?q=${searchString}&app_id=${APP_ID}&app_key=${APP_KEY}&to=50`
+        const response = await Axios.get(`https://api.edamam.com/search?q=${searchString}&app_id=${APP_ID}&app_key=${process.env.REACT_APP_API_KEY}&to=50`
         )
         console.log(response)
         updateRecipeList(response.data.hits) 
