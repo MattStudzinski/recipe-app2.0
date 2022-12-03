@@ -4,6 +4,7 @@ export const Container = styled.div`
 display:flex;
 flex-direction:column;
 `
+
 export const Header = styled.div`
 color: white;
 background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0, 0.4)), url('/HeaderPhoto2.jpg');

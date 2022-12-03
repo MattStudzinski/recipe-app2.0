@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Axios from 'axios';
 import { AppName, Container, AppIcon, Header, Search, SearchIcon, SearchInput } from '../StyleComponets/HeaderComponet';
 
-import { ListContainer,RecipeCard,RecipeImage,RecipeIngredients,LinktoRecipe,RecipeName, MealType, CuisineType, TimeToCook } from '../StyleComponets/RecipeComponet';
+import { ListContainer,RecipeCard,RecipeImage,LinktoRecipe,RecipeName, RecipeDetails, MouseIcon } from '../StyleComponets/RecipeComponet';
 
 
 const APP_ID ='bb0a04fb'
@@ -17,11 +17,56 @@ const APP_KEY = process.env.REACT_APP_API_KEY
 
 
 
+const ArticleContainer = styled.div`
+padding:0 32px  ;
+`
+const TitleWrapper = styled.div`
+display: flex;
+padding: 9px 0 5px;
+border-bottom: solid black 1px;
+`
 
 
 
 const DetailsContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: space-between;
+flex-wrap: wrap;
+width: 100%;
+`
+const InfoList = styled.ul`
+display: flex;
+    list-style: none;
+    padding: 22px 0 16px;
+    margin: 0;
+    justify-content: space-between;
+`
+const InfoLiItem = styled.li`
+display: list-item;
+`
+const InfoIcon = styled.img`
+width: 20px;
+height: 20px;
+`
 
+const InfoValue = styled.span`
+font-size: 24px;
+font-weight: 600px;
+vertical-align: bottom;
+margin-left: 8.5px;
+color: #5AA7C6;
+`
+
+const InfoTitle = styled.div`
+font-size: 21px;
+font-weight: 500;
+`
+const ButtonContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items:center;
 `
 
 const RecipeDetailsName = styled.p`
@@ -37,7 +82,13 @@ const IngredientsContainer = styled.ul`
 `
 
 const Ingredients = styled.li`
+padding: 3px;
+list-style: url("/food.svg");
 
+::marker{
+    font-size:30px;
+    
+}
 `
 
 const RecipeCards = (props) => {
@@ -48,17 +99,43 @@ const RecipeCards = (props) => {
     console.log(stringCal)
     return (
         <RecipeCard>
-            <RecipeImage src={recipeObj.image}/>
+            <RecipeImage src={recipeObj.image}></RecipeImage>
+            <ArticleContainer>
+            <TitleWrapper>
             <RecipeName>{recipeObj.label.length > 27 ? recipeObj.label.slice(0, 27) + "..." : recipeObj.label}</RecipeName>
-            <CuisineType>Cuisine: {recipeObj.cuisineType} <MealType>{recipeObj.mealType}</MealType></CuisineType>
-            <TimeToCook>Cook-time: {recipeObj.totalTime} minutes</TimeToCook>
-            <RecipeIngredients onClick={() => setShow(!show)}>ingredients</RecipeIngredients>
+            </TitleWrapper>
+
+
+            <InfoList>
+                <InfoLiItem>
+                    <InfoIcon src='/clock.svg'/>
+                    <InfoValue>{recipeObj.totalTime}</InfoValue>
+                    <InfoTitle>Minutes</InfoTitle>
+                </InfoLiItem>
+
+                <InfoLiItem>
+                    <InfoIcon src='/book.svg'/>
+                    <InfoValue>{recipeObj.ingredientLines.length}</InfoValue>
+                    <InfoTitle>Ingredients</InfoTitle>
+                </InfoLiItem>
+            
+                <InfoLiItem>
+                    <InfoIcon src='/man.svg'/>
+                    <InfoValue>{recipeObj.yield}</InfoValue>
+                    <InfoTitle>Serving</InfoTitle>
+                </InfoLiItem>
+            
+            </InfoList>
+            <ButtonContainer>
+            <RecipeDetails onClick={() => setShow(!show)}>More Details<MouseIcon src='/mouse.svg'/></RecipeDetails>
             
             
             
-            {show && <DetailsContainer><RecipeDetailsName>{recipeObj.label} </RecipeDetailsName>
+            {show && <DetailsContainer>
+                
+                <RecipeDetailsName>{recipeObj.label} </RecipeDetailsName>
              
-             <RecipeDetailsCalories>{stringCal.length > 5 ? stringCal.slice(0,6) + '' : stringCal}</RecipeDetailsCalories>
+             <RecipeDetailsCalories>Calories: {stringCal.length > 5 ? stringCal.slice(0,6) + '' : stringCal}</RecipeDetailsCalories>
              
              
              <IngredientsContainer>
@@ -67,7 +144,9 @@ const RecipeCards = (props) => {
                 ))}
              </IngredientsContainer>
              </DetailsContainer>}
-            <LinktoRecipe onClick={() => window.open(recipeObj.url)}>See complete recipe</LinktoRecipe>
+            <RecipeDetails style={{backgroundcolor: "blue"}} onClick={() => window.open(recipeObj.url)}>Let's Get Cooking!<MouseIcon src='mouse.svg'/></RecipeDetails>
+            </ButtonContainer>
+            </ArticleContainer>
         </RecipeCard>
     );
 };
