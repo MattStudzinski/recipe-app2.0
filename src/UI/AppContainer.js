@@ -70,11 +70,15 @@ align-items:center;
 `
 
 const RecipeDetailsName = styled.p`
-
+font-size: 24px;
+font-weight: 500;
+align-self: center;
 `
 
 const RecipeDetailsCalories = styled.p`
-
+align-self: center;
+font-size: 18px;
+font-weight: 500;
 `
 
 const IngredientsContainer = styled.ul`
@@ -84,6 +88,8 @@ const IngredientsContainer = styled.ul`
 const Ingredients = styled.li`
 padding: 3px;
 list-style: url("/food.svg");
+font-size: 18px;
+font-weight: 500;
 
 ::marker{
     font-size:30px;
