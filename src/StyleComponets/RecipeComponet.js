@@ -1,18 +1,6 @@
 import styled from 'styled-components';
 
-export const PlaceholderContainer = styled.div`
-display: flex;
-flex-direction: column;
-justify-content: center;
-align-items: center;
-`
-
-export const Placeholder = styled.p`
-font-size: 24px;
-font-weight: 500;
-margin: 15px;
-`
-
+// constians recipe cards
 export const ListContainer = styled.div`
 display: flex;
 flex-direction: row;
@@ -23,6 +11,12 @@ justify-content: space-evenly;
 
 `
 
+// puts everything below recipe image in a container
+export const ArticleContainer = styled.div`
+padding:0 32px  ;
+`
+
+// card for recipes
 export const RecipeCard = styled.div`
 display: flex;
 flex-direction: column;
@@ -31,79 +25,61 @@ width: 460px;
 box-shadow: 0 3px 10px 0 #aaa;
 background-color: rgb(233, 241, 248);
 `
+
+// image
 export const RecipeImage = styled.img`
 height:281px;
 border-top-left-radius: 5px;
 border-top-right-radius: 5px;
 `
+// goes around recipe title
+export const TitleWrapper = styled.div`
+display: flex;
+padding: 9px 0 5px;
+border-bottom: solid black 1px;
+`
+
+// name on card
 export const RecipeName = styled.span`
 font-size: 24px;
 margin: 20px 0px;
 font-weight: bold;
 color: black;
-
 `
 
 
+// THIS IS WHERE THE ICONS AND CALORIES,MINUTES, AND SERVINGS ARE STORED
+
+
+// holds list of minutes, servings, and ingredient count
+export const InfoList = styled.ul`
+display: flex;
+    list-style: none;
+    padding: 22px 0 16px;
+    margin: 0;
+    justify-content: space-between;
+`
 export const InfoLiItem = styled.li`
+display: list-item;
+`
+export const InfoIcon = styled.img`
+width: 20px;
+height: 20px;
 `
 
-export const RecipeDetails = styled.div`
-align-items: center;
-  background-color: #FFFFFF;
-  border: 1px solid rgba(0, 0, 0, 0.1);
-  border-radius: .25rem;
-  box-shadow: rgba(0, 0, 0, 0.7) 0 3px 5px 0;
-  box-sizing: border-box;
-  color: rgba(0, 0, 0, 0.85);
-  cursor: pointer;
-  display: inline-flex;
-  font-family: system-ui,-apple-system,system-ui,"Helvetica Neue",Helvetica,Arial,sans-serif;
-  font-size: 18px;
-  font-weight: 500;
-  justify-content: center;
-  justify-self: center;
-  line-height: 1.25;
-  margin: 25px;
-  min-height: 3rem;
-  padding: calc(.875rem - 1px) calc(1.5rem - 1px);
-  position: relative;
-  text-decoration: none;
-  transition: all 250ms;
-  user-select: none;
-  -webkit-user-select: none;
-  touch-action: manipulation;
-  vertical-align: baseline;
-  width: auto;
-  background-color: #C6795A ;
-  width: 80%;
-  
-
-
-&:hover,
-&:focus {
-
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.1) 0 4px 12px;
-  color: rgba(0, 0, 0, 0.65);
-}
-
-&:hover {
-  transform: translateY(-1px);
-}
-
-&:active {
-  background-color: #F0F0F1;
-  border-color: rgba(0, 0, 0, 0.15);
-  box-shadow: rgba(0, 0, 0, 0.06) 0 2px 4px;
-  color: rgba(0, 0, 0, 0.65);
-  transform: translateY(0);
-}
+export const InfoValue = styled.span`
+font-size: 24px;
+font-weight: 600px;
+vertical-align: bottom;
+margin-left: 8.5px;
+color: #5AA7C6;
 `
-export const MouseIcon = styled.img`
-width:25px;
-padding-left: 10px;
+
+export const InfoTitle = styled.div`
+font-size: 21px;
+font-weight: 500;
 `
+
 
 
 

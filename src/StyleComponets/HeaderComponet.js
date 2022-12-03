@@ -1,10 +1,10 @@
 import styled from "styled-components"
-
+// constins whole header
 export const Container = styled.div`
 display:flex;
 flex-direction:column;
 `
-
+// whole area that is picture
 export const Header = styled.div`
 color: white;
 background: linear-gradient(rgba(0,0,0, 0.4), rgba(0,0,0, 0.4)), url('/HeaderPhoto2.jpg');
@@ -21,34 +21,35 @@ box-shadow: 0 3px 6px 0 #555 ;
 align-items: center;
 justify-content: center;
 `
+// just name of app
 export const AppName = styled.div`
 display: flex;
 align-items: center;
 margin-right: 66px;
 
 `
-
+// icon to left
 export const AppIcon = styled.img`
 height: 36px;
 width: 36px;
 margin: 15px;
 
 `
-
+// search bar
 export const Search = styled.div`
 display: flex;
 flex-direction: row;
 background-color: white;
 padding: 10px;
-border-radius: 6px;
+border-radius: 20px;
 width: 50%;
 `
-
+// magnifying glass to left
 export const SearchIcon = styled.img`
 width: 32px;
 height: 32px;
 `
-
+// input inside search bar
 export const SearchInput = styled.input`
 border: none;
 outline: none;
@@ -58,4 +59,16 @@ font-weight: bold;
 width: 100%;
 `
 
-// linear-gradient(rgba(124, 86, 17, 0.6), rgba(64, 26, 17, 0.6)), url('/HeaderPhoto2.jpg');
+// container for homescreen text
+export const PlaceholderContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
+// homescreen text
+export const Placeholder = styled.p`
+font-size: 24px;
+font-weight: 500;
+margin: 15px;
+`
