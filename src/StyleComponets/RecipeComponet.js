@@ -1,5 +1,18 @@
 import styled from 'styled-components';
 
+export const PlaceholderContainer = styled.div`
+display: flex;
+flex-direction: column;
+justify-content: center;
+align-items: center;
+`
+
+export const Placeholder = styled.p`
+font-size: 24px;
+font-weight: 500;
+margin: 15px;
+`
+
 export const ListContainer = styled.div`
 display: flex;
 flex-direction: row;

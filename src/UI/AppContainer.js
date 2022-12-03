@@ -3,7 +3,7 @@ import styled from 'styled-components';
 import Axios from 'axios';
 import { AppName, Container, AppIcon, Header, Search, SearchIcon, SearchInput } from '../StyleComponets/HeaderComponet';
 
-import { ListContainer,RecipeCard,RecipeImage,LinktoRecipe,RecipeName, RecipeDetails, MouseIcon } from '../StyleComponets/RecipeComponet';
+import { ListContainer,RecipeCard,RecipeImage,Placeholder,RecipeName, RecipeDetails, MouseIcon, PlaceholderContainer } from '../StyleComponets/RecipeComponet';
 
 
 const APP_ID ='bb0a04fb'
@@ -150,7 +150,7 @@ const RecipeCards = (props) => {
                 ))}
              </IngredientsContainer>
              </DetailsContainer>}
-            <RecipeDetails style={{backgroundcolor: "blue"}} onClick={() => window.open(recipeObj.url)}>Let's Get Cooking!<MouseIcon src='mouse.svg'/></RecipeDetails>
+            <RecipeDetails onClick={() => window.open(recipeObj.url)}>Let's Get Cooking!<MouseIcon src='mouse.svg'/></RecipeDetails>
             </ButtonContainer>
             </ArticleContainer>
         </RecipeCard>
@@ -179,7 +179,7 @@ const AppContainer = () => {
         <Container>
             <Header>
                 <AppName>
-                    <AppIcon src='/fork.svg' alt='hamburger'/>Recipe Finder
+                    <AppIcon src='/fork.svg' alt='hamburger'/>What's For Dinner
                 </AppName>
                     <Search>
                         <SearchIcon src='/search.svg' alt='search icon'/>
@@ -187,8 +187,17 @@ const AppContainer = () => {
                     </Search>
             </Header>
             <ListContainer>
-            {recipeList.map((recipeObj) => 
-                    <RecipeCards recipeObj = {recipeObj.recipe}/>)}
+            {recipeList.length ?
+            recipeList.map((recipeObj) => (
+                    <RecipeCards recipeObj = {recipeObj.recipe}/>
+                    )):
+                    <PlaceholderContainer>
+                    <Placeholder>Welcome to <strong>What's For Dinner! </strong>Struggling to empty out that crowded pantry? We can help with that.</Placeholder>
+                    <Placeholder> Start by typing a list of ingredients (e.g., eggs mushroom bacon cheese) and your search will return recipes sharing all those ingredients!</Placeholder>
+                    <Placeholder>If you just want to find a general recipe just type in the name (e.g., Chicken Noodle Soup) and the results will be, you guessed it, chicken noodle soup!</Placeholder>
+                    <Placeholder>Now, <strong>lets get cooking!</strong></Placeholder>
+                    </PlaceholderContainer>}
+                    
             </ListContainer>
         </Container>
     );
