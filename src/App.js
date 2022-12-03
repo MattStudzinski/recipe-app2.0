@@ -1,4 +1,3 @@
-import styled from 'styled-components'
 import AppContainer from './UI/AppContainer';
 import "./index.css"
 
