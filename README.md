@@ -1,70 +1,37 @@
-# Getting Started with Create React App
+#What's For Dinner
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
-## Available Scripts
+I was inspired to create this application due to the amout of effort you have to put in to find the details on a recipe, searching the web it seems like theres a life story aattached to the recipe and you have to scroll for ages before you actually find the ingridients. I designed this app to remove that hasle from the process, All information is easily accessible and straight forward.
 
-In the project directory, you can run:
+User can search through thousands of recipes using ingredients as the search parameter
 
-### `npm start`
+User can access the link to recipe url
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+User can see more details such as ingredients and calorie count
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
-### `npm test`
+# Using the app
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+When opening the application the user will be greeted with a homepage. this page consists of the search bar and some simple instructions on how to use the application. All the user has to do is type in ingredients or a recipe name and wait a few seconds, the search function executes automatically so no need to press enter! The results will then populate with a list of 50 recipes that each show some helpful infromation about the recipe, if the user wants to see the ingredients of the recipe just press the button "More Details" and the recipe card will expand revealing the list. Once the user is ready to take the next step they can press the "Lets Get Cooking!" button found at the bottom of the card.
 
-### `npm run build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Technologies used: React.js, CSS, HTML
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+# Screenshots
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+![Screen Shot 2022-12-03 at 11 59 20 PM](https://user-images.githubusercontent.com/88520969/205480994-386169dd-5313-4317-b97e-ffad9b3d6eb3.png)
 
-### `npm run eject`
+![Screen Shot 2022-12-03 at 11 27 19 PM](https://user-images.githubusercontent.com/88520969/205481007-278cdab0-118c-4b24-8eb0-ce92362b201e.png)
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+![Screen Shot 2022-12-03 at 11 27 45 PM](https://user-images.githubusercontent.com/88520969/205481010-c1e1e7c0-5196-4135-9e78-c051fbf53b0c.png)
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+![Screen Shot 2022-12-03 at 11 28 29 PM](https://user-images.githubusercontent.com/88520969/205481012-852af796-b2b3-4bd6-b4f8-00526cf3a251.png)
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+# Stretch goals 
 
-## Learn More
+Unfortunately I wasn't able to apply a filter search to the app, where a user can click a button and the value of that button will fill into the search input.
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Ability to move pages, currently there is a set amount of recipes that will come back froma search. There needs to be a load more or next page function implemented.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+A filter out search, I want the user to be able to filter out ingredients they dont want included in the recipe because many people have allergies or intolerances.
