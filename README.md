@@ -1,4 +1,4 @@
-#What's For Dinner
+# What's For Dinner
 
 
 I was inspired to create this application due to the amout of effort you have to put in to find the details on a recipe, searching the web it seems like theres a life story aattached to the recipe and you have to scroll for ages before you actually find the ingridients. I designed this app to remove that hasle from the process, All information is easily accessible and straight forward.
