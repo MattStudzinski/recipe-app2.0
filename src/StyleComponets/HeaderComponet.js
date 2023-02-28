@@ -22,7 +22,7 @@ align-items: center;
 justify-content: center;
 `
 
-export const NavBar = styled.div`
+export const NavContainer = styled.div`
 display:flex;
 `
 

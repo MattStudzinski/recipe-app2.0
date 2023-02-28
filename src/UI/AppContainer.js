@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
-import { AppName, Container, AppIcon, Header, Search, SearchIcon, SearchInput,Placeholder,PlaceholderContainer, NavBar } from '../StyleComponets/HeaderComponet';
+import { Link } from 'react-router-dom';
+import { AppName, Container, AppIcon, Header, Search, SearchIcon, SearchInput,Placeholder,PlaceholderContainer, NavContainer } from '../StyleComponets/HeaderComponet';
 import {RecipeDetailsCalories,ButtonContainer, MouseIcon, DetailsContainer,RecipeDetailsName,IngredientsContainer,Ingredients,RecipeDetails} from '../StyleComponets/RecipeDetailsComponets'
 import { ListContainer,RecipeCard,RecipeImage,RecipeName, InfoList,InfoLiItem,InfoIcon,InfoTitle,InfoValue,ArticleContainer,TitleWrapper } from '../StyleComponets/RecipeComponet';
 
@@ -71,6 +72,20 @@ const RecipeCards = (props) => {
     );
 };
 
+export const NavBar = () => {
+
+    return(
+        <NavContainer>
+            <AppName>
+                    <AppIcon src='/fork.svg' alt='hamburger'/>What's For Dinner
+                </AppName>
+                <Link to={'/'}>Home</Link>
+                <Link to='/profile'>Profile</Link>
+                <Link to='/recents'>Recents</Link>
+            </NavContainer>
+    )
+}
+
 
 
 const AppContainer = () => {
@@ -92,13 +107,6 @@ const AppContainer = () => {
     return (
         // all CSS for this except ListContainer and RecipeCards(in RecipeComponet) are found in HeaderComponet.js
         <Container>
-            <NavBar>
-            <AppName>
-                    <AppIcon src='/fork.svg' alt='hamburger'/>What's For Dinner
-                </AppName>
-                <div>My Profile</div>
-                <div>Recently viewed</div>
-            </NavBar>
             <Header>
                 <AppName>
                     <AppIcon src='/fork.svg' alt='hamburger'/>What's For Dinner
