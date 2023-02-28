@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
-import { AppName, Container, AppIcon, Header, Search, SearchIcon, SearchInput,Placeholder,PlaceholderContainer } from '../StyleComponets/HeaderComponet';
+import { AppName, Container, AppIcon, Header, Search, SearchIcon, SearchInput,Placeholder,PlaceholderContainer, NavBar } from '../StyleComponets/HeaderComponet';
 import {RecipeDetailsCalories,ButtonContainer, MouseIcon, DetailsContainer,RecipeDetailsName,IngredientsContainer,Ingredients,RecipeDetails} from '../StyleComponets/RecipeDetailsComponets'
 import { ListContainer,RecipeCard,RecipeImage,RecipeName, InfoList,InfoLiItem,InfoIcon,InfoTitle,InfoValue,ArticleContainer,TitleWrapper } from '../StyleComponets/RecipeComponet';
 
@@ -92,6 +92,13 @@ const AppContainer = () => {
     return (
         // all CSS for this except ListContainer and RecipeCards(in RecipeComponet) are found in HeaderComponet.js
         <Container>
+            <NavBar>
+            <AppName>
+                    <AppIcon src='/fork.svg' alt='hamburger'/>What's For Dinner
+                </AppName>
+                <div>My Profile</div>
+                <div>Recently viewed</div>
+            </NavBar>
             <Header>
                 <AppName>
                     <AppIcon src='/fork.svg' alt='hamburger'/>What's For Dinner

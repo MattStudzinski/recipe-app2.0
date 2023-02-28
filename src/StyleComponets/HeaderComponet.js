@@ -21,12 +21,18 @@ box-shadow: 0 3px 6px 0 #555 ;
 align-items: center;
 justify-content: center;
 `
+
+export const NavBar = styled.div`
+display:flex;
+`
+
 // just name of app
 export const AppName = styled.div`
 display: flex;
 align-items: center;
 margin-right: 66px;
-
+font-size: 25px;
+font-weight: bold;
 `
 // icon to left
 export const AppIcon = styled.img`
