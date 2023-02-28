@@ -53,7 +53,9 @@ height: 32px;
 export const SearchInput = styled.input`
 border: none;
 outline: none;
-margin-left: 15px;
+vertical-align: baseline;
+padding-top:3px;
+margin-left: 13px;
 font-size: 18px;
 font-weight: bold;
 width: 100%;

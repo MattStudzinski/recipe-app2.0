@@ -98,7 +98,7 @@ const AppContainer = () => {
                 </AppName>
                     <Search>
                         <SearchIcon src='/search.svg' alt='search icon'/>
-                        <SearchInput placeholder='Search recipe' onChange={onTextChange}/>
+                        <SearchInput type= 'text' placeholder='Search recipe' onChange={onTextChange}/>
                     </Search>
             </Header>
             <ListContainer>
