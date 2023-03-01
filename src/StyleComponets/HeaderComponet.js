@@ -1,4 +1,5 @@
 import styled from "styled-components"
+import { Link } from 'react-router-dom';
 // constins whole header
 export const Container = styled.div`
 display:flex;
@@ -12,6 +13,7 @@ background-size: cover;
 background-repeat: no-repeat;
 background-position: center 42%;    
 height: 40vh;
+width: 100%;
 display: flex;
 flex-direction: column;
 padding: 20px;
@@ -20,10 +22,6 @@ font-weight: bold;
 box-shadow: 0 3px 6px 0 #555 ;
 align-items: center;
 justify-content: center;
-`
-
-export const NavContainer = styled.div`
-display:flex;
 `
 
 // just name of app
@@ -79,4 +77,41 @@ export const Placeholder = styled.p`
 font-size: 24px;
 font-weight: 500;
 margin: 15px;
+`
+// Start of nav bar styles
+
+// container for whole bar
+export const NavContainer = styled.div`
+display:flex;
+height: 45px;
+
+`
+
+export const AppNameNav = styled.div`
+display: flex;
+width: 100%;
+align-items: center;
+
+font-size: 15px;
+font-weight: bold;
+`
+
+export const AppIconNav = styled.img`
+height: 36px;
+width: 36px;
+`
+
+export const LinkContainer = styled.div`
+
+display: flex;
+align-items: center;
+gap: 15px;
+margin-right: 5px;
+justify-content: flex-end;
+
+`
+
+export const Links = styled(Link)`
+text-decoration: none;
+color: #595959;
 `

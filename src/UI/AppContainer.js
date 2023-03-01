@@ -1,7 +1,6 @@
 import React, { useState } from 'react';
 import Axios from 'axios';
-import { Link } from 'react-router-dom';
-import { AppName, Container, AppIcon, Header, Search, SearchIcon, SearchInput,Placeholder,PlaceholderContainer, NavContainer } from '../StyleComponets/HeaderComponet';
+import { AppName, Container, AppIcon, Header, Search, SearchIcon, SearchInput,Placeholder,PlaceholderContainer, NavContainer, AppIconNav, LinkContainer,AppNameNav,Links } from '../StyleComponets/HeaderComponet';
 import {RecipeDetailsCalories,ButtonContainer, MouseIcon, DetailsContainer,RecipeDetailsName,IngredientsContainer,Ingredients,RecipeDetails} from '../StyleComponets/RecipeDetailsComponets'
 import { ListContainer,RecipeCard,RecipeImage,RecipeName, InfoList,InfoLiItem,InfoIcon,InfoTitle,InfoValue,ArticleContainer,TitleWrapper } from '../StyleComponets/RecipeComponet';
 
@@ -76,12 +75,14 @@ export const NavBar = () => {
 
     return(
         <NavContainer>
-            <AppName>
-                    <AppIcon src='/fork.svg' alt='hamburger'/>What's For Dinner
-                </AppName>
-                <Link to={'/'}>Home</Link>
-                <Link to='/profile'>Profile</Link>
-                <Link to='/recents'>Recents</Link>
+            <AppNameNav>
+                    <AppIconNav src='./fork.svg' alt='hamburger'/>What's For Dinner
+                </AppNameNav>
+                <LinkContainer>
+                <Links to={'/'}>Home</Links>
+                <Links to='/profile'>Profile</Links>
+                <Links to='/recents'>Recents</Links>
+                </LinkContainer>
             </NavContainer>
     )
 }
