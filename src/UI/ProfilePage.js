@@ -1,12 +1,23 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { PageContainer, ProfileContainer, TitleContainer, Picture,Name,MealsEaten,FavoritesContainer,Title,Card } from '../StyleComponets/ProfileComponet';
+
 
 const ProfilePage = () => {
     return (
-        <>
-        <h1>Hello there</h1>
-        
-        </>
+        <PageContainer>
+            <ProfileContainer>
+            <TitleContainer>
+                <Picture></Picture>
+                <Name></Name>
+                <MealsEaten></MealsEaten>
+            </TitleContainer>
+            
+            </ProfileContainer>
+            <FavoritesContainer>
+                <Title></Title>
+                <Card></Card>
+            </FavoritesContainer>
+        </PageContainer>
     );
 };
 
