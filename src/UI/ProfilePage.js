@@ -9,7 +9,7 @@ const ProfilePage = () => {
                 <Bannerdeco src='./banner.png' alt='decor image'></Bannerdeco>
             </BannerContainer>
 
-            
+
             <TitleContainer>
                 <Picture src='./fork.svg' alt='hamburger'></Picture>
                 <Name>Jerri Martin</Name>
@@ -18,9 +18,17 @@ const ProfilePage = () => {
 
 
             <FavoritesContainer>
-                hello
                 <Title>title</Title>
                 <ListContainer>
+                <Card>cards
+                    here
+                </Card>
+                <Card>cards
+                    here
+                </Card>
+                <Card>cards
+                    here
+                </Card>
                 <Card>cards
                     here
                 </Card>
