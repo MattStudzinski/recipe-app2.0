@@ -1,18 +1,42 @@
 import styled from "styled-components"
 
 export const PageContainer = styled.div`
-
+height: 100vh;
+display: flex;
+flex-direction: column;
+align-items: center;
 `
 
-export const ProfileContainer = styled.div`
+export const BannerContainer = styled.div `
+ width: 100%;
+  height: 25rem;
+  z-index: 0;
+  overflow: hidden;
+`
 
+export const Bannerdeco = styled.img`
+width: 110%;
+  height: 100%;
+  object-fit: cover;
+  transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
 `
 
 export const TitleContainer = styled.div`
-
+text-align: center;
+    max-width: 45rem;
+    width: 90%;
+    margin-top: -13rem;
+    position: relative;
+    color: white;
+    border-radius: 14px;
+    padding: 1rem;
+    box-shadow: 0 1px 18px 10px rgba(0, 0, 0, 0.25);
 `
 
 export const Picture = styled.img`
+height: 150px;
+width: 150px;
+margin-top: 60px;
 
 `
 
@@ -25,11 +49,15 @@ export const MealsEaten = styled.div`
 `
 
 export const FavoritesContainer = styled.div`
+display: flex;
 
+width: 100%;
 `
 
 export const Title = styled.div`
 
+`
+export const ListContainer = styled.div`
 `
 
 export const Card = styled.div`

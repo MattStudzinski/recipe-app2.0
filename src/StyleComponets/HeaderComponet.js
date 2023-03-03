@@ -84,7 +84,11 @@ margin: 15px;
 export const NavContainer = styled.div`
 display:flex;
 height: 45px;
-
+position: fixed;
+z-index: 2;
+width: 100%;
+background-color: rgb(188, 202, 202);
+box-shadow: rgba(0, 0, 0, 0.6) 0 5px 12px;
 `
 
 export const AppNameNav = styled.div`
