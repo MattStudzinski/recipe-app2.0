@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import Axios from 'axios';
 import { AppName, Container, AppIcon, Header, Search, SearchIcon, SearchInput,Placeholder,PlaceholderContainer, NavContainer, AppIconNav, LinkContainer,AppNameNav,Links } from '../StyleComponets/HeaderComponet';
 import {RecipeDetailsCalories,ButtonContainer, MouseIcon, DetailsContainer,RecipeDetailsName,IngredientsContainer,Ingredients,RecipeDetails} from '../StyleComponets/RecipeDetailsComponets'
-import { ListContainer,RecipeCard,RecipeImage,RecipeName, InfoList,InfoLiItem,InfoIcon,InfoTitle,InfoValue,ArticleContainer,TitleWrapper } from '../StyleComponets/RecipeComponet';
+import { ListContainer,RecipeCard,RecipeImage,RecipeName, InfoList,InfoLiItem,InfoIcon,InfoTitle,InfoValue,ArticleContainer,TitleWrapper, AddButton } from '../StyleComponets/RecipeComponet';
 
 
 const APP_ID ='bb0a04fb'
@@ -12,15 +12,17 @@ const RecipeCards = (props) => {
     console.log('props', props)
     const {recipeObj} =props
     const [show, setShow] = useState(false)
+    const [image,setImage] = useState('')
     const stringCal = recipeObj.calories.toString()
     console.log(stringCal)
     return (
         // CSS for this area is in RecipeComponet.js
         <RecipeCard>
-            <RecipeImage src={recipeObj.image}></RecipeImage>
+            <RecipeImage src={recipeObj.image} value={image}></RecipeImage>
             <ArticleContainer>
             <TitleWrapper>
             <RecipeName>{recipeObj.label.length > 27 ? recipeObj.label.slice(0, 27) + "..." : recipeObj.label}</RecipeName>
+            <AddButton>Save Recipe</AddButton>
             </TitleWrapper>
 
 
@@ -79,7 +81,7 @@ export const NavBar = () => {
                     <AppIconNav src='./fork.svg' alt='hamburger'/>What's For Dinner
                 </AppNameNav>
                 <LinkContainer>
-                <Links to={'/'}>Home</Links>
+                <Links to='/home'>Home</Links>
                 <Links to='/profile'>Profile</Links>
                 <Links to='/recents'>Recents</Links>
                 </LinkContainer>

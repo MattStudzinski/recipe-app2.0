@@ -1,8 +1,13 @@
 import React from 'react';
 import { PageContainer, BannerContainer, Bannerdeco, ListContainer, TitleContainer, Picture,Name,MealsEaten,FavoritesContainer,Title,Card } from '../StyleComponets/ProfileComponet';
-
+import axios from 'axios';
 
 const ProfilePage = () => {
+
+    axios.get('https://recipeapp223a.herokuapp.com/recipes')
+    .then( res => {
+        console.log(res.data)
+    })
     return (
         <PageContainer>
             <BannerContainer>

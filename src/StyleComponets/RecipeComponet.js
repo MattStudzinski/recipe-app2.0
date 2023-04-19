@@ -35,6 +35,8 @@ border-top-right-radius: 5px;
 // goes around recipe title
 export const TitleWrapper = styled.div`
 display: flex;
+justify-content: space-between;
+align-items: center;
 padding: 9px 0 5px;
 border-bottom: solid black 1px;
 `
@@ -47,6 +49,10 @@ font-weight: bold;
 color: black;
 `
 
+export const AddButton = styled.button`
+background-color: green;
+max-height: 35px;
+`
 
 // THIS IS WHERE THE ICONS AND CALORIES,MINUTES, AND SERVINGS ARE STORED
 
