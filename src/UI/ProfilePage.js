@@ -1,8 +1,25 @@
 import React from 'react';
-import { PageContainer, BannerContainer, Bannerdeco, ListContainer, TitleContainer, Picture,Name,MealsEaten,FavoritesContainer,Title,Card } from '../StyleComponets/ProfileComponet';
+import { PageContainer, BannerContainer, Bannerdeco, ListContainer, TitleContainer, Picture,Name,MealsEaten,FavoritesContainer,Title, } from '../StyleComponets/ProfileComponet';
 import axios from 'axios';
+import { useState } from 'react';
+import { RecipeCard } from '../StyleComponets/RecipeComponet';
+
+
+const Cards = (props) => {
+    console.log('props', props)
+    const {recipe} = props
+
+    return (
+        <RecipeCard>
+            <h1>bbbb</h1>
+        </RecipeCard>
+    )
+}
+
 
 const ProfilePage = () => {
+
+    const [recipeList, updateRecipeList] = useState([])
 
     axios.get('https://recipeapp223a.herokuapp.com/recipes')
     .then( res => {
@@ -25,24 +42,21 @@ const ProfilePage = () => {
             <FavoritesContainer>
                 <Title>title</Title>
                 <ListContainer>
-                <Card>cards
-                    here
-                </Card>
-                <Card>cards
-                    here
-                </Card>
-                <Card>cards
-                    here
-                </Card>
-                <Card>cards
-                    here
-                </Card>
-                </ListContainer>
+            
+            {recipeList.map((recipe) => (
+                    <Cards recipe = {recipe.recipe}/>
+                    ))}:
+                    
+            
+                    
+            </ListContainer>
             </FavoritesContainer>
 
 
         </PageContainer>
     );
 };
+
+
 
 export default ProfilePage;

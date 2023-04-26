@@ -67,6 +67,6 @@ justify-content: space-evenly;
 width: 100%;
 `
 
-export const Card = styled.div`
+export const ProfileRecipeCards = styled.div`
 
 `
