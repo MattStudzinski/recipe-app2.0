@@ -7,12 +7,10 @@ import { RecipeCard } from '../StyleComponets/RecipeComponet';
 
 const Cards = (props) => {
     console.log('props', props)
-    const {recipe} = props
-
+    const {recipeobj} = props
+    console.log('hello')
     return (
-        <RecipeCard>
-            <h1>bbbb</h1>
-        </RecipeCard>
+       <Title></Title>
     )
 }
 
@@ -21,10 +19,11 @@ const ProfilePage = () => {
 
     const [recipeList, updateRecipeList] = useState([])
 
-    axios.get('https://recipeapp223a.herokuapp.com/recipes')
-    .then( res => {
-        console.log(res.data)
-    })
+    // axios.get('https://recipeapp223a.herokuapp.com/recipes')
+    // .then( res => {
+    //     console.log(res.data)
+    //     updateRecipeList(res.data.hits)
+    // })
     return (
         <PageContainer>
             <BannerContainer>
@@ -43,8 +42,9 @@ const ProfilePage = () => {
                 <Title>title</Title>
                 <ListContainer>
             
-            {recipeList.map((recipe) => (
-                    <Cards recipe = {recipe.recipe}/>
+            {
+            recipeList.map((recipeobj) => (
+                    <Cards recipeobj = {recipeobj.recipe}/>
                     ))}:
                     
             

@@ -81,7 +81,7 @@ export const NavBar = () => {
                     <AppIconNav src='./fork.svg' alt='hamburger'/>What's For Dinner
                 </AppNameNav>
                 <LinkContainer>
-                <Links to='/home'>Home</Links>
+                <Links to='/'>Home</Links>
                 <Links to='/profile'>Profile</Links>
                 <Links to='/recents'>Recents</Links>
                 </LinkContainer>
