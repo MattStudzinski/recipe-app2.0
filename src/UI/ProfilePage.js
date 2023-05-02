@@ -1,29 +1,26 @@
 import React from 'react';
 import { PageContainer, BannerContainer, Bannerdeco, ListContainer, TitleContainer, Picture,Name,MealsEaten,FavoritesContainer,Title, } from '../StyleComponets/ProfileComponet';
 import axios from 'axios';
-import { useState } from 'react';
+import { useState,useEffect } from 'react';
 import { RecipeCard } from '../StyleComponets/RecipeComponet';
 
 
-const Cards = (props) => {
-    console.log('props', props)
-    const {recipeobj} = props
-    console.log('hello')
-    return (
-       <Title></Title>
-    )
-}
 
 
 const ProfilePage = () => {
 
     const [recipeList, updateRecipeList] = useState([])
 
-    // axios.get('https://recipeapp223a.herokuapp.com/recipes')
-    // .then( res => {
-    //     console.log(res.data)
-    //     updateRecipeList(res.data.hits)
-    // })
+    useEffect(() => {
+        fetchRecipiesn()
+    }, [])
+
+    const fetchRecipiesn= () => {axios.get('https://recipeapp223a.herokuapp.com/recipes')
+    .then( res => {
+        console.log(res.data)
+        updateRecipeList(res.data)
+    })}
+    
     return (
         <PageContainer>
             <BannerContainer>
@@ -43,12 +40,13 @@ const ProfilePage = () => {
                 <ListContainer>
             
             {
-            recipeList.map((recipeobj) => (
-                    <Cards recipeobj = {recipeobj.recipe}/>
-                    ))}:
+            
+            recipeList.map((recipeList) => (
+                
+                    <Cards recipeList = {recipeList}/>
+                 ))}:
                     
             
-                    
             </ListContainer>
             </FavoritesContainer>
 
@@ -57,6 +55,17 @@ const ProfilePage = () => {
     );
 };
 
+const Cards = (recipeList) => {
+    console.log('props', recipeList)
+    
 
+    return (
+        <>
+       <Title>{recipeList.recipeList.name}</Title>
+       <Title>{recipeList.recipeList.ingredientstotal}</Title>
+       <Title>{recipeList.recipeList.ingredients}</Title>
+       </>
+    )
+}
 
 export default ProfilePage;
