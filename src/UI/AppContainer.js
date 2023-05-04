@@ -15,6 +15,11 @@ const RecipeCards = (props) => {
     const [image,setImage] = useState('')
     const stringCal = recipeObj.calories.toString()
     console.log(stringCal)
+
+    const handleSubmit = (e) => {
+        const recipe = {recipeObj}
+        console.log(recipe)
+    }
     return (
         // CSS for this area is in RecipeComponet.js
         <RecipeCard>
@@ -22,7 +27,7 @@ const RecipeCards = (props) => {
             <ArticleContainer>
             <TitleWrapper>
             <RecipeName>{recipeObj.label.length > 27 ? recipeObj.label.slice(0, 27) + "..." : recipeObj.label}</RecipeName>
-            <AddButton>Save Recipe</AddButton>
+            <AddButton onClick={handleSubmit}>Save Recipe</AddButton>
             </TitleWrapper>
 
 
