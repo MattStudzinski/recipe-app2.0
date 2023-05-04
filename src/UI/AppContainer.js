@@ -3,6 +3,8 @@ import Axios from 'axios';
 import { AppName, Container, AppIcon, Header, Search, SearchIcon, SearchInput,Placeholder,PlaceholderContainer, NavContainer, AppIconNav, LinkContainer,AppNameNav,Links } from '../StyleComponets/HeaderComponet';
 import {RecipeDetailsCalories,ButtonContainer, MouseIcon, DetailsContainer,RecipeDetailsName,IngredientsContainer,Ingredients,RecipeDetails} from '../StyleComponets/RecipeDetailsComponets'
 import { ListContainer,RecipeCard,RecipeImage,RecipeName, InfoList,InfoLiItem,InfoIcon,InfoTitle,InfoValue,ArticleContainer,TitleWrapper, AddButton } from '../StyleComponets/RecipeComponet';
+import axios from 'axios';
+import { Navigate } from 'react-router-dom';
 
 
 const APP_ID ='bb0a04fb'
@@ -16,9 +18,13 @@ const RecipeCards = (props) => {
     const stringCal = recipeObj.calories.toString()
     console.log(stringCal)
 
+    
+
     const handleSubmit = (e) => {
-        const recipe = {recipeObj}
-        console.log(recipe)
+        
+        
+        axios
+        .post('https://recipeapp223a.herokuapp.com/recipes', recipeObj)
     }
     return (
         // CSS for this area is in RecipeComponet.js
