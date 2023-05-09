@@ -63,7 +63,10 @@ const Cards = (recipeList) => {
         <>
        <Title>{recipeList.recipeList.name}</Title>
        <Title>{recipeList.recipeList.ingredientstotal}</Title>
-       <Title>{recipeList.recipeList.ingredients}</Title>
+       {/* <Title>{recipeList.recipeList.ingredients}</Title> */}
+       <Title>{recipeList.recipeList.url}</Title>
+       <Title>{recipeList.recipeList.yield}</Title>
+       <Title>{recipeList.recipeList.image}</Title>
        </>
     )
 }
