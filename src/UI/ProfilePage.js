@@ -1,5 +1,5 @@
 import React from 'react';
-import { PageContainer, BannerContainer, Bannerdeco, ListContainer, TitleContainer, Picture,Name,MealsEaten,FavoritesContainer,Title, } from '../StyleComponets/ProfileComponet';
+import { PageContainer, BannerContainer, Bannerdeco, ListContainer, TitleContainer, CardContainer, Picture,Name,MealsEaten,FavoritesContainer,Title, } from '../StyleComponets/ProfileComponet';
 import axios from 'axios';
 import { useState,useEffect } from 'react';
 import { RecipeCard } from '../StyleComponets/RecipeComponet';
@@ -60,15 +60,22 @@ const Cards = (recipeList) => {
     
 
     return (
-        <>
-       <Title>{recipeList.recipeList.name}</Title>
+        <CardContainer>
+       <Title>{recipeList.recipeList.label}</Title>
+       <Title>{recipeList.recipeList.totalTime}</Title>
        <Title>{recipeList.recipeList.ingredientstotal}</Title>
-       {/* <Title>{recipeList.recipeList.ingredients}</Title> */}
+       
        <Title>{recipeList.recipeList.url}</Title>
        <Title>{recipeList.recipeList.yield}</Title>
-       <Title>{recipeList.recipeList.image}</Title>
-       </>
+       
+       <div>
+       {recipeList.recipeList.ingredients.map((ingredient,index) => (
+                    <Title key={index}>{ingredient.text}</Title>
+                ))}
+        </div>
+       </CardContainer>
     )
 }
+
 
 export default ProfilePage;

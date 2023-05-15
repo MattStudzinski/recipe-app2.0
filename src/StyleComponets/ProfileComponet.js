@@ -21,6 +21,12 @@ width: 110%;
   transform: rotateZ(-5deg) translateY(-4rem) translateX(-1rem);
 `
 
+export const CardContainer = styled.section`
+display: flex;
+flex-direction: row;
+width: 90%;
+height: 80%
+`
 export const TitleContainer = styled.div`
 text-align: center;
     max-width: 45rem;
@@ -65,6 +71,7 @@ display: flex;
 flex-wrap: wrap;
 justify-content: space-evenly;
 width: 100%;
+height: 100%;
 `
 
 export const ProfileRecipeCards = styled.div`
